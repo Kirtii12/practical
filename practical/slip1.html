@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+ <title>Student Registration</title>
+</head>
+<body>
+ <script type="text/javascript">
+ function validation() { 
+ var name = document.frm.name.value; 
+ var lname = document.frm.lname.value; 
+ var mobile = document.frm.mob.value; 
+ var address = document.frm.add.value; 
+ var city = document.frm.city.value; 
+ var age = document.frm.age.value; 
+ if (name != "" && lname != "" && mobile != "" && address != "" && city != "" && age
+!= "") { 
+ if (!name.match(/^[a-z A-Z]+$/)) { 
+ alert("Invalid name fields");
+ } else if (!lname.match(/^[a-z A-Z]+$/)) { 
+ alert("Invalid last name fields");
+ } else if (!mobile.match(/^\d{10}$/)) { 
+ alert("Invalid mobile no fields");
+ }else if(age>=18 && age<=50) { 
+ alert("Submit succesfully......");
+ } else { 
+ alert("Age not between 18 to 50") 
+ } 
+ } 
+ else { 
+ alert("Invalid fields");
+ } 
+ } 
+ </script>
+ <center>
+ <h1>Student Registration Form</h1>
+ <form name="frm">
+ <table>
+ <tr>
+ <td>Name: </td>
+ <td><input type="text" name="name"></td>
+ </tr>
+ <tr>
+ <td>Last Name: </td>
+ <td><input type="text" name="lname"></td>
+ </tr>
+ <tr>
+ <td>Mobile No: </td>
+ <td><input type="text" name="mob"></td>
+ </tr>
+ <tr>
+ <td>Address: </td>
+ <td><input type="text" name="add"></td>
+ </tr>
+ <tr>
+ <td>City: </td>
+ <td><input type="text" name="city"></td>
+ </tr>
+ <tr>
+ <td>Age: </td>
+ <td><input type="text" name="age"></td>
+ </tr>
+ </table><br>
+ <input type="button" name="b1" onclick="validation()" value="Submit">
+ <input type="reset" name="b2">
+ </form>
+</center>
+</body>
+</html>

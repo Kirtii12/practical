@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+ <meta charset="UTF-8">
+ <meta http-equiv="X-UA-Compatible" content="IE=edge">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <title>Employee Details</title>
+</head>
+<body>
+ <center>
+ <h1>Employee Registration Form</h1>
+ <form name="frm">
+ <table>
+ <tr>
+ <td>Employee Name: </td>
+ <td><input type="text" name="name"></td>
+ </tr>
+ <tr>
+ <td>Employee Address: </td>
+ <td><input type="text" name="Address"></td>
+ </tr>
+ <tr>
+ <td>Employee Email Address</td>
+ <td><input type="text" name="Email"></td>
+ </tr>
+ <tr>
+ <td>Employee Contact Number: </td>
+ <td><input type="text" name="Telephone"></td>
+ </tr>
+ <tr>
+ <td>Employee Birthdate: </td>
+ <td><input type="text" name="bdate"
+placeholder="dd/mm/yyyy"></td>
+ </tr>
+ <tr>
+ <td>Joining Date: </td>
+ <td><input type="text" name="jdate"
+placeholder="dd/mm/yyyy"></td>
+ </tr>
+ <tr>
+ <td>Salary: </td>
+ <td><input type="text" name="salary" ></td>
+ </tr>
+ </table><br>
+ <input type="button" name="b1" onclick="validate()" value="Submit">
+ <input type="reset" name="b2">
+ </form>
+ </center>
+ <script>
+ function validate() {
+ var bdate = document.frm.bdate.value; 
+ var jdate = document.frm.jdate.value; 
+ var salary = document.frm.salary.value; 
+ let date = /^(0?[1-9]|[12][0-9]|3[01])[\/\-](0?[1-9]|1[012])[\/\-]\d{4}$/; 
+ if (bdate != "" && jdate != "" && salary != "") {
+ if (isNaN(salary)) {
+ alert("Enter only digit please"); 
+ } else if(bdate.search(date) == -1){
+ alert("Employee Birth Date is Invalid");
+ } 
+ else if(jdate.search(date) == -1){
+ alert("Employee Join Date is Invalid");
+ }else
+ { 
+ alert("Submit succesfully......");
+ } 
+ } 
+ else { 
+ alert("Invalid fields");
+ } 
+} 
+ </script>
+</body>
+</html>

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+ <meta charset="UTF-8">
+ <meta http-equiv="X-UA-Compatible" content="IE=edge">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <title>Login Page</title>
+</head>
+<body>
+ <center>
+ <h1>Login Form</h1>
+ <form name="frm">
+ <table>
+ <tr>
+ <td>User Name</td>
+ <td><input type="text" name="Email"></td>
+ </tr>
+ <tr>
+ <td>Password </td>
+ <td><input type="text" name="password"></td>
+ </tr>
+ </table><br>
+ <input type="button" name="b1" onclick="validate()" value="Submit">
+ <input type="reset" name="b2">
+ </form>
+ </center>
+ <script>
+ function validate() { 
+ var email = document.frm.Email.value; 
+ var password = document.frm.password.value; 
+ var filter = /^([a-zA-Z0-9_\.\-])+\@(([a-zA-Z0-9\-])+\.)+([a-zA-Z0-9]{2,4})+$/; 
+ if (email != "" && password != "") { 
+ if (!email.match(filter)) { 
+ alert("Invalid email fields");
+ } else if (password.length < 6 || password.length > 8) { 
+ alert("Password min and max length is 6.");
+ } 
+ else { 
+ alert("Thank you for Login") 
+ } 
+ } 
+ else { 
+ alert("Invalid fields");
+ } 
+ } 
+ </script>
+</body>
+</html> 

@@ -1,0 +1,52 @@
+<html>
+ <head>
+ <script type="text/javascript">
+ function validate()
+ {
+ 
+ var regName=/^[a-zA-z]+[a-zA-Z]+$/;
+ var dateformatdob = /^(0?[1-9]|[12][0-9]|3[01])[\/\-](0?[1-9]|1[012])[\/\-]\d{4}$/;
+ var dateformatjdate = /^(0?[1-9]|[12][0-9]|3[01])[\/\-](0?[1-9]|1[012])[\/\-]\d{4}$/;
+ 
+ //Max six digits, a dot, max two digits after dot
+ var salaryformat=/^\d{1,6}(?:\.\d{0,2})?$/
+ var name=document.getElementById("txtname").value;
+ var dob=document.getElementById("txtdob").value;
+ var jdate=document.getElementById("txtjdate").value;
+ var salary=document.getElementById("txtsalary").value;
+ 
+ if(!regName.test(name))
+ alert("invalid name is given");
+ else
+ alert("valid name is given");
+ 
+ if(!dateformatjdate.test(jdate))
+ alert("invalid joining date is given");
+ else
+ alert("valid joining date is given");
+ if(!dateformatdob.test(dob))
+ alert("invalid date of birth is given");
+ else
+ alert("valid date of birth is given is given");
+ if(!salaryformat.test(salary))
+ alert("invalid salary");
+ else
+ alert("salary is valid");
+ }
+ </script> 
+ </head>
+<body>
+<form>
+ <h1>Employee Rsgistration Details</h1>
+ enter employee first name
+ <input type="text" name="txtfname" id="txtname"><br>
+ enter date of birth
+ <input type="text" name="txtdob" id="txtdob"><br>
+ enter joining date
+ <input type="text" name="txtjdate" id="txtjdate"><br>
+ enter salary
+ <input type="text" name="txtsalary" id="txtsalary"><br>
+ <input type="button" value="validate" onclick="validate()">
+ </form>
+ </body>
+ </html>
